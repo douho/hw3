@@ -1,16 +1,24 @@
 import React from "react";
-import { StyleSheet, Text, View, Image} from "react-native";
+import { StyleSheet, Text, View, Image, Pressable} from "react-native";
+//import { NavigationContainerRefContext, useNavigation } from "@react-navigation/native";
+//import Navigation from "../navigation";
+import { useNavigation } from '@react-navigation/native';
 
 const HotAlbumDetail = props => {
+  const navigation = useNavigation();
    let { album } = props;
    return (
      <View style={{flexDirection: 'column'}}>
       <View style={styles.cardContainerStyle}>
+        <Pressable>
+          onPress={() => navigation.navigate('Detail',album)}
           <Image
             style={styles.imageStyle}
             source={{uri: album.image}}
           />
+        </Pressable>
       </View> 
+      
       <View style={styles.headerContainerStyle}>
         <Text style={styles.headerTitleStyle}>{album.title}</Text>
         <Text style={styles.headerContentStyle}>{album.artist}</Text>

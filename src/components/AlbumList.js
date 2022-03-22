@@ -5,14 +5,14 @@ import HotAlbumDetail from "./HotAlbumDetail";
 import sections from "../json/album_section.json";
 
 const Albumlist = () => {
-  const renderSectionHeader = ({section}) => (
+  const renderSectionHeader = ({section, navigation}) => (
     <>
       <Text style={styles.sectionHeader}>{section.title}</Text>
       {section.horizontal ? (
         <FlatList
           horizontal={true}
           data={section.data}
-          renderItem={({ item }) => <HotAlbumDetail album={item} />}
+          renderItem={({ item }) => <HotAlbumDetail album={item} navigation={navigation}/>}
           showsHorizontalScrollIndicator={false}
           keyExtractor={ item => item.title }
         />

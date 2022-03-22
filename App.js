@@ -1,24 +1,20 @@
 import React from 'react';
-import { SafeAreaView, StatusBar} from 'react-native';
-import Header from './src/components/Header';
-import Index from './navigator';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { NativeBaseProvider } from 'native-base';
+
+import Navigation from './src/navigation';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <StatusBar />
-      <Header />
-      <Index />
-    </SafeAreaView>
-  );
-};
-export default App;
+    <SafeAreaProvider>
+      {/* <SafeAreaView style={{ flex: 1 }}> */}
+        <NativeBaseProvider>
+          <Navigation />
+        </NativeBaseProvider>
+      {/* </SafeAreaView> */}
+    </SafeAreaProvider>
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+  );
+}
+
+export default App;

@@ -1,5 +1,9 @@
 import React from "react";
+//import { Text, FlatList, SectionList, StyleSheet } from "react-native";
 import { StyleSheet, Text, View, Image, TouchableOpacity, Linking} from "react-native";
+//import HotAlbumDetail from "./HotAlbumDetail";
+//import sections from "../json/album_section.json";
+
 
 const AlbumDetail = ({ album, navigation }) => {
    return (

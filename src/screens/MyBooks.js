@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from 'react-native';
 
 // Make a component
-const SettingsScreen = ({ navigation }) => {
+const MyBooks = ({ navigation }) => {
     return (
         <View style={{
           backgroundColor: '#F2E4B6',
@@ -15,4 +15,4 @@ const SettingsScreen = ({ navigation }) => {
     );
 }
 
-export default SettingsScreen;
+export default MyBooks;
