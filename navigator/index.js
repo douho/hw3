@@ -1,18 +1,20 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+//import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Image } from 'react-native';
 
-import Albumlist from '../src/components/AlbumList';
+//import Albumlist from '../src/components/AlbumList';
 import DetailScreen from '../src/screens/DetailScreen';
 import SettingsScreen from '../src/screens/SettingsScreen';
 import WishScreen from '../src/screens/WishScreen';
-import albumData from "./src/json/albums.json";
+//import albumData from "../src/json/albums.json";
 import section from "../src/json/album_section.json" 
+import AlbumScreen from '../src/screens/AlbumScreen';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const AlbumStack = () => {
@@ -20,14 +22,10 @@ const AlbumStack = () => {
       <Stack.Navigator>
         <Stack.Screen 
           name="Home" 
-          component={Albumlist} 
-          // options={{
-          //   title: section.Title,
-          //   headerTitleStyle: {
-          //     fontWeight: '400',
-          //     fontSize: 20
-          //   }, 
-          // }}
+          component={AlbumScreen} 
+          options={{
+            title: section.title,
+          }}
         />
         <Stack.Screen 
           name="Detail" 
@@ -41,7 +39,7 @@ const AlbumStack = () => {
             headerTitleStyle: {
               fontWeight: '400',
               fontSize: 20
-            },  
+            }, 
            })}
         />      
       </Stack.Navigator>
@@ -53,6 +51,7 @@ const Index = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
+      initialRouteName='AlbumStack'
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconPath;
@@ -80,23 +79,20 @@ const Index = () => {
             );
           },
           tabBarStyle: { 
-            position: 'absolute',
             height: 80,
           },
+            activeTintColor: '#6200EE',
+            inactiveTintColor: '#666666',
+            labelStyle: {
+              fontSize: 12,
+              marginTop: 3,
+              marginBottom: 8,
+              padding: 0,
+            },
+            tabBarIconStyle: {
+              marginTop: 8,
+            },
         })}
-        tabBarOptions={{
-          activeTintColor: '#6200EE',
-          inactiveTintColor: '#666666',
-          labelStyle: {
-            fontSize: 12,
-            marginTop: 3,
-            marginBottom: 8,
-            padding: 0,
-          },
-          tabBarIconStyle: {
-            marginTop: 8,
-          },
-          }}
       >
         <Tab.Screen name="Home" component={AlbumStack} />
         <Tab.Screen name="Wishlist" component={WishScreen} />

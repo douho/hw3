@@ -10,7 +10,6 @@ const Header = () =>{
                 source = {require("../icon/icon.png")}
             />
             </View>
-            
         </View>
     );
 };
