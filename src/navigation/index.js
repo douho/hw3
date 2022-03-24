@@ -107,6 +107,12 @@ const HomeStack = () => {
             fontSize: 20,
             color: "#fff",
           },
+          headerLeft: () => (
+            <MaterialCommunityIcons
+              name={'menu'}
+              size={24}
+            />
+          ),
           headerRight:() =>(
             <Image
             style={styles.btn}
@@ -125,6 +131,9 @@ const HomeStack = () => {
             fontSize: 20,
             color: "#fff",
           },
+          // headerLeft:() =>(
+          //   <MaterialCommunityIcons name="chevron-left" color="#000" size={24} style={styles.btn}/>
+          // ),
           headerRight: () =>(
             <MaterialCommunityIcons name="bookmark-outline" color="#000" size={24} style={styles.btn}/>
           )
