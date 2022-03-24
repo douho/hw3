@@ -39,6 +39,10 @@ const MyTabs = () => {
         options={{
           headerShown: false,
           title: "Home",
+          tabBarStyle:{
+            height:56,
+            paddingBottom:8
+          },
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={24} />
           ),
@@ -48,7 +52,12 @@ const MyTabs = () => {
         name="WishList" 
         component={WishScreen} 
         options={{
+          headerShown: false,
           title: "WishList",
+          tabBarStyle:{
+            height:56,
+            paddingBottom:8
+          },
           headerTitleStyle: {
             fontWeight: '400',
             fontSize: 20
@@ -62,7 +71,12 @@ const MyTabs = () => {
         name="MyBooks" 
         component={MyBooks} 
         options={{
+          headerShown: false,
           title: "MyBooks",
+          tabBarStyle:{
+            height:56,
+            paddingBottom:8
+          },
           headerTitleStyle: {
             fontWeight: '400',
             fontSize: 20

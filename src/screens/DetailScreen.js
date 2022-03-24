@@ -6,8 +6,6 @@ import { Button, Card, Text, PricingCard, Tile } from 'react-native-elements';
 const DetailScreen = ({ route }) => {
   const { title, 
           artist,
-          price,
-          url,
           image,
           descriptions
         } = route.params;
