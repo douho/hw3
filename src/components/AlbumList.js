@@ -11,6 +11,7 @@ const Albumlist = () => {
       {section.horizontal ? (
         <FlatList
           horizontal={true}
+          style={{backgroundColor:'#fff'}}
           data={section.data}
           renderItem={({ item }) => <HotAlbumDetail album={item} navigation={navigation}/>}
           showsHorizontalScrollIndicator={false}
@@ -32,6 +33,7 @@ const Albumlist = () => {
       contentContainerStyle={{ paddingHorizontal: 10 }}
       stickySectionHeadersEnabled={false}
       showsHorizontalScrollIndicator={false}
+      style={{backgroundColor:'#fff',}}
       renderSectionHeader={renderSectionHeader}
       renderItem={renderItem}
       keyExtractor={ item => item.title }

@@ -4,14 +4,15 @@ import { StyleSheet, Text, View, Image, Pressable} from "react-native";
 //import Navigation from "../navigation";
 import { useNavigation } from '@react-navigation/native';
 
-const HotAlbumDetail = props => {
+const HotAlbumDetail = (props) => {
   const navigation = useNavigation();
    let { album } = props;
    return (
-     <View style={{flexDirection: 'column'}}>
+     <View style={{flexDirection: 'column', }}>
       <View style={styles.cardContainerStyle}>
-        <Pressable>
+        <Pressable
           onPress={() => navigation.navigate('Detail',album)}
+        >
           <Image
             style={styles.imageStyle}
             source={{uri: album.image}}
@@ -20,6 +21,7 @@ const HotAlbumDetail = props => {
       </View> 
       
       <View style={styles.headerContainerStyle}>
+        
         <Text style={styles.headerTitleStyle}>{album.title}</Text>
         <Text style={styles.headerContentStyle}>{album.artist}</Text>
       </View>   
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
   cardContainerStyle: {
     marginLeft: 4,
     marginRight: 4,
-    // backgroundColor: "blue",
+    backgroundColor:'#fff',
   },
   headerContainerStyle: {
     flexDirection: "column",
@@ -39,6 +41,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginBottom: 8,
     width: 140,
+    backgroundColor:'#fff',
   },
   headerTitleStyle: {
     fontSize: 16,

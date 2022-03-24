@@ -51,17 +51,10 @@ const styles = StyleSheet.create({
     paddingLeft: 10
   },
   cardContainerStyle: {
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: "#ddd",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 10
+    width: "100%",
+    height: 210,
+    paddingLeft: 75,
+    paddingRight: 75,
   },
   cardSectionStyle: {
     padding: 5,
@@ -70,8 +63,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   imageStyle: {
-    height: 300,
-    width: null
+    borderTopRightRadius: 6,
+    borderBottomRightRadius: 6,
+    height: 210,
+    width: 300,
   }
 });
 

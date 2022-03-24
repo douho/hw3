@@ -96,7 +96,7 @@ const HomeStack = () => {
           headerRight:() =>(
             <Image
             style={styles.btn}
-            source={require("../icon/icon.png")}
+            source={require("../icon/search.png")}
             />
           ),
         }}
@@ -106,14 +106,14 @@ const HomeStack = () => {
         component={DetailScreen}
         options={({ route }) => ({
           title: route.params.title,
-          headerStyle: {
-            backgroundColor: '#fff',
-          },
-          headerTintColor: '#000',
+          headerShadowVisible:false,
           headerTitleStyle: {
-            fontWeight: '400',
-            fontSize: 20
+            fontSize: 20,
+            color: "#fff",
           },
+          headerRight: () =>(
+            <MaterialCommunityIcons name="bookmark-outline" color="#000" size={24} style={styles.btn}/>
+          )
         })}
       />
     </Stack.Navigator>
